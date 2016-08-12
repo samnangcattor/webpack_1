@@ -15,6 +15,9 @@ config.output = {
   filename: "bundle.js",
   // if the webpack code-splitting feature is enabled, this is the path it"ll use to download bundles
   publicPath: "/assets",
+
+  devtoolModuleFilenameTemplate: '[resourcePath]',
+  devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
 };
 
 config.resolve = {
@@ -23,7 +26,7 @@ config.resolve = {
   extensions: ["", ".js"],
   // by default, webpack will search in `web_modules` and `node_modules`. Because we"re using
   // Bower, we want it to look in there too
-  modulesDirectories: [ "node_modules", "bower_components" ],
+  modulesDirectories: [ "node_modules", "bower_components" ]
 };
 
 config.plugins = [
